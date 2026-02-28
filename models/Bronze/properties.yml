@@ -1,4 +1,0 @@
-models:
-    - name: Bronze
-      config:
-        materialized: table
