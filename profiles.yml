@@ -1,0 +1,13 @@
+aws_snowflake_dbt_project:
+  outputs:
+    dev:
+      account: CIWVEZJ-VE32916
+      database: SNOWFLAKE_DBT
+      password: Ak9866Chow9866#
+      role: ACCOUNTADMIN
+      schema: dbt_schema
+      threads: 1
+      type: snowflake
+      user: AJAY0609
+      warehouse: COMPUTE_WH
+  target: dev
