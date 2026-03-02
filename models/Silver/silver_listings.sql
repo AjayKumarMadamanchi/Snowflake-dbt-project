@@ -5,13 +5,16 @@
     incremental_strategy='merge'
   )
 }}
-SELECT ROOM_TYPE,
-       CITY,
-       COUNTRY,
-       ACCOMMODATES,
-       BEDROOMS,
-       BATHROOMS,
-       PRICE_PER_NIGHT,
+SELECT LISTING_ID,
+    HOST_ID,
+    PROPERTY_TYPE,
+    ROOM_TYPE,
+    CITY,
+    COUNTRY,
+    ACCOMMODATES,
+    BEDROOMS,
+    BATHROOMS,
+    PRICE_PER_NIGHT,
        {{date_conversion_timezone('created_at','Asia/Kolkata')}} as created_at
  FROM {{ref('bronze_listings')}}
 
