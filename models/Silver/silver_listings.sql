@@ -5,9 +5,17 @@
     incremental_strategy='merge'
   )
 }}
+SELECT ROOM_TYPE,
+       CITY,
+       COUNTRY,
+       ACCOMMODATES,
+       BEDROOMS,
+       BATHROOMS,
+       PRICE_PER_NIGHT,
+       {{date_conversion_timezone('created_at','Asia/Kolkata')}} as created_at
+ FROM {{ref('bronze_listings')}}
 
-
-select * from {{ source('staging', 'hosts') }}
+ 
 {% if is_incremental() %}
     where created_at > (
         select coalesce(max(created_at), '1900-01-01')

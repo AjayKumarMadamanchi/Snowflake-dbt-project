@@ -33,6 +33,9 @@ models:
   aws_snowflake_dbt_project:
     # Config indicated by + and applies to all files under models/example/
     Bronze:
-      +materialized: view
+      +materialized: table
       +schema: bronze
+    Silver:
+      +materialized: Incremental
+      +schema: silver
       
