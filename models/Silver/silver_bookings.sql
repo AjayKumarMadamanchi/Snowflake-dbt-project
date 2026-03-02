@@ -24,5 +24,5 @@ FROM {{ref('bronze_bookings')}}
         from {{ this }}
     )
     {% endif %}
-ORDER BY booking_date
+ORDER BY booking_dateq
 
